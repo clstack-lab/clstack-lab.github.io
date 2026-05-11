@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Liversidge | Healthcare IT Infrastructure & GDPR Compliance</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #0f172a;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: #ddd6fe;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: white;
+            color: #1e40af;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .hero .cta:hover {
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+        .section {
+            padding: 4rem 2.5rem;
+        }
+        .section-dark {
+            background: #f8fafc;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .section-header p {
+            font-size: 1.15rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .diff-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .diff-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+        }
+        .diff-card .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .diff-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .diff-card p {
+            color: #475569;
+            line-height: 1.7;
+        }
+        .diagram-container {
+            background: #f8fafc;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid #e2e8f0;
+        }
+        .diagram-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 2rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        .service-card.blue { border-left-color: #3b82f6; }
+        .service-card.purple { border-left-color: #8b5cf6; }
+        .service-card.indigo { border-left-color: #6366f1; }
+        .service-card.cyan { border-left-color: #06b6d4; }
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .service-card ul {
+            list-style: none;
+            color: #475569;
+        }
+        .service-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stack-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+        .stack-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 0.75rem;
+        }
+        .stack-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+        .badge.planned {
+            background: #94a3b8;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            color: white;
+            padding: 4rem 2.5rem;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ddd6fe;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contact-buttons a {
+            background: white;
+            color: #1e40af;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .contact-buttons a:hover {
+            transform: translateY(-2px);
+        }
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 1.1rem; }
+            .section { padding: 3rem 1.5rem; }
+            .diff-grid, .services-grid, .stack-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Charlie Liversidge</h1>
+        <p class="tagline">Healthcare IT Infrastructure | GDPR Compliance | Self-Hosted Systems</p>
+        <a href="#contact" class="cta">Get a Free Consultation</a>
+    </div>
 
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <h2>Why Work With Me?</h2>
+                <p>I'm not a faceless IT company. I'm a healthcare professional who understands your world and built my own secure infrastructure from scratch.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <div class="icon">🏥</div>
+                    <h3>Healthcare Background</h3>
+                    <p>I've worked in complex care and mental health settings. I understand clinical workflows, patient confidentiality, and the real-world pressures of healthcare environments.</p>
+                </div>
+                <div class="diff-card">
+                    <div class="icon">🔒</div>
+                    <h3>GDPR-First Approach</h3>
+                    <p>Every system I build prioritizes data protection and regulatory compliance. I don't bolt on security as an afterthought — it's the foundation.</p>
+                </div>
+                <div class="diff-card">
+                    <div class="icon">💰</div>
+                    <h3>No Enterprise Overhead</h3>
+                    <p>You're not paying for sales teams, account managers, or corporate bloat. Just direct, honest technical work at prices small practices can actually afford.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-dark">
+            <div class="section-header">
+                <h2>My Current Infrastructure</h2>
+                <p>Here's what I've built and deployed in my own production homelab environment</p>
+            </div>
+            <div class="diagram-container">
+                <div class="diagram-title">Network Topology</div>
+                <svg viewBox="0 0 800 500" style="max-width: 100%; height: auto;">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Internet -->
+                    <rect x="350" y="20" width="100" height="60" rx="8" fill="url(#grad1)"/>
+                    <text x="400" y="55" text-anchor="middle" fill="white" font-weight="600">Internet</text>
+                    
+                    <!-- Cloudflare Tunnel -->
+                    <rect x="320" y="120" width="160" height="60" rx="8" fill="#f97316" opacity="0.9"/>
+                    <text x="400" y="155" text-anchor="middle" fill="white" font-weight="600">Cloudflare Tunnel</text>
+                    
+                    <!-- Proxmox Server -->
+                    <rect x="300" y="220" width="200" height="70" rx="8" fill="#6366f1" opacity="0.9"/>
+                    <text x="400" y="245" text-anchor="middle" fill="white" font-weight="600" font-size="16">Proxmox VE 8.4.19</text>
+                    <text x="400" y="265" text-anchor="middle" fill="white" font-size="12">ThinkCentre M70Q Gen2</text>
+                    <text x="400" y="280" text-anchor="middle" fill="white" font-size="11">16GB RAM | 256GB SSD</text>
+                    
+                    <!-- Containers -->
+                    <rect x="50" y="350" width="140" height="100" rx="6" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+                    <text x="120" y="375" text-anchor="middle" fill="#1e40af" font-weight="600">CT100</text>
+                    <text x="120" y="395" text-anchor="middle" fill="#475569" font-size="13">Pi-hole</text>
+                    <text x="120" y="410" text-anchor="middle" fill="#475569" font-size="13">Unbound</text>
+                    <text x="120" y="430" text-anchor="middle" fill="#64748b" font-size="11">DNS + Ad-block</text>
+                    
+                    <rect x="210" y="350" width="140" height="100" rx="6" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+                    <text x="280" y="375" text-anchor="middle" fill="#7c3aed" font-weight="600">CT102</text>
+                    <text x="280" y="395" text-anchor="middle" fill="#475569" font-size="13">NGINX</text>
+                    <text x="280" y="410" text-anchor="middle" fill="#475569" font-size="13">Proxy Manager</text>
+                    <text x="280" y="430" text-anchor="middle" fill="#64748b" font-size="11">Reverse Proxy</text>
+                    
+                    <rect x="370" y="350" width="140" height="100" rx="6" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="2"/>
+                    <text x="440" y="375" text-anchor="middle" fill="#0891b2" font-weight="600">CT103</text>
+                    <text x="440" y="395" text-anchor="middle" fill="#475569" font-size="13">Vaultwarden</text>
+                    <text x="440" y="410" text-anchor="middle" fill="#475569" font-size="13">+ 2FA</text>
+                    <text x="440" y="430" text-anchor="middle" fill="#64748b" font-size="11">Password Mgmt</text>
+                    
+                    <rect x="530" y="350" width="140" height="100" rx="6" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
+                    <text x="600" y="375" text-anchor="middle" fill="#059669" font-weight="600">CT104</text>
+                    <text x="600" y="395" text-anchor="middle" fill="#475569" font-size="13">WireGuard</text>
+                    <text x="600" y="410" text-anchor="middle" fill="#475569" font-size="13">VPN</text>
+                    <text x="600" y="430" text-anchor="middle" fill="#64748b" font-size="11">Secure Access</text>
+                    
+                    <rect x="690" y="350" width="100" height="100" rx="6" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="740" y="375" text-anchor="middle" fill="#d97706" font-weight="600">CT105</text>
+                    <text x="740" y="395" text-anchor="middle" fill="#475569" font-size="13">Homarr</text>
+                    <text x="740" y="430" text-anchor="middle" fill="#64748b" font-size="11">Dashboard</text>
+                    
+                    <!-- Connection lines -->
+                    <line x1="400" y1="80" x2="400" y2="120" stroke="#64748b" stroke-width="2"/>
+                    <line x1="400" y1="180" x2="400" y2="220" stroke="#64748b" stroke-width="2"/>
+                    <line x1="400" y1="290" x2="120" y2="350" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5"/>
+                    <line x1="400" y1="290" x2="280" y2="350" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5,5"/>
+                    <line x1="400" y1="290" x2="440" y2="350" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="5,5"/>
+                    <line x1="400" y1="290" x2="600" y2="350" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,5"/>
+                    <line x1="450" y1="290" x2="740" y2="350" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5"/>
+                </svg>
+                <div style="text-align: center; margin-top: 2rem; color: #64748b;">
+                    <p><strong>All containers backed up nightly via Restic to Cloudflare R2</strong></p>
+                    <p style="margin-top: 0.5rem;">LUKS encryption | Tailscale mesh network | GDPR-compliant architecture</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Services I Provide</h2>
+                <p>Practical, affordable solutions for small healthcare providers</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card blue">
+                    <h3>Infrastructure Setup</h3>
+                    <ul>
+                        <li>Proxmox server deployment</li>
+                        <li>Container orchestration</li>
+                        <li>Network design & segmentation</li>
+                        <li>Hardware consultation</li>
+                    </ul>
+                </div>
+                <div class="service-card purple">
+                    <h3>Security & Compliance</h3>
+                    <ul>
+                        <li>GDPR compliance audit</li>
+                        <li>Encrypted backup systems</li>
+                        <li>Secure remote access (VPN)</li>
+                        <li>Password management</li>
+                    </ul>
+                </div>
+                <div class="service-card indigo">
+                    <h3>Self-Hosted Solutions</h3>
+                    <ul>
+                        <li>File storage (Nextcloud)</li>
+                        <li>Password manager (Vaultwarden)</li>
+                        <li>Email hosting</li>
+                        <li>Document management</li>
+                    </ul>
+                </div>
+                <div class="service-card cyan">
+                    <h3>Ongoing Support</h3>
+                    <ul>
+                        <li>System monitoring</li>
+                        <li>Backup verification</li>
+                        <li>Security updates</li>
+                        <li>Technical consultation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-dark">
+            <div class="section-header">
+                <h2>Current & Planned Technology Stack</h2>
+                <p>What I'm running now and what's coming next</p>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <h4>Currently Deployed</h4>
+                    <p>
+                        <span class="badge">Proxmox VE 8.4</span>
+                        <span class="badge">Pi-hole</span>
+                        <span class="badge">Unbound DNS</span>
+                        <span class="badge">NGINX Proxy</span>
+                        <span class="badge">Vaultwarden</span>
+                        <span class="badge">WireGuard VPN</span>
+                        <span class="badge">Homarr</span>
+                        <span class="badge">Cloudflare Tunnel</span>
+                        <span class="badge">Restic Backups</span>
+                        <span class="badge">Tailscale</span>
+                    </p>
+                </div>
+                <div class="stack-item">
+                    <h4>In Development</h4>
+                    <p>
+                        <span class="badge planned">OPNsense Firewall</span>
+                        <span class="badge planned">Synology DS423+ NAS</span>
+                        <span class="badge planned">Jellyfin Media</span>
+                        <span class="badge planned">Nextcloud</span>
+                        <span class="badge planned">Immich Photos</span>
+                        <span class="badge planned">Authentik SSO</span>
+                        <span class="badge planned">Grafana Monitoring</span>
+                        <span class="badge planned">Wazuh SIEM</span>
+                    </p>
+                </div>
+                <div class="stack-item">
+                    <h4>Hardware</h4>
+                    <p>
+                        <span class="badge">Lenovo ThinkCentre M70Q</span>
+                        <span class="badge">DeskPi RackMate 8U</span>
+                        <span class="badge planned">DrayTek Router</span>
+                        <span class="badge planned">Ruckus AP</span>
+                        <span class="badge planned">TP-Link Managed Switch</span>
+                        <span class="badge planned">APC UPS 950VA</span>
+                    </p>
+                </div>
+                <div class="stack-item">
+                    <h4>Compliance & Security</h4>
+                    <p>
+                        <span class="badge">LUKS Encryption</span>
+                        <span class="badge">GDPR Architecture</span>
+                        <span class="badge">UK Data Protection</span>
+                        <span class="badge">Encrypted Backups</span>
+                        <span class="badge">2FA/MFA</span>
+                        <span class="badge planned">VLAN Segmentation</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section" id="contact">
+        <h2>Ready to Secure Your Infrastructure?</h2>
+        <p>If you're a GP practice, private clinic, or care home looking for secure, GDPR-compliant, self-hosted infrastructure, I'd be happy to provide a free initial consultation.</p>
+        <div class="contact-buttons">
+            <a href="mailto:charlie.liversidge@proton.me">Email Me</a>
+            <a href="https://linkedin.com/in/charlie-liversidge-65412840a" target="_blank">LinkedIn</a>
+            <a href="https://github.com/clstack-lab" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Charlie Liversidge | GDPR-Compliant Infrastructure for Healthcare Providers</p>
+    </div>
+</body>
+</html>
