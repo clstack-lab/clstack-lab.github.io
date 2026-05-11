@@ -39,10 +39,12 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
         .hero .cta:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
         }
         .container {
             max-width: 1200px;
@@ -54,6 +56,9 @@
         }
         .section-dark {
             background: #f8fafc;
+        }
+        .section-accent {
+            background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
         }
         .section-header {
             text-align: center;
@@ -82,11 +87,12 @@
             padding: 2rem;
             border-radius: 12px;
             border: 2px solid #e2e8f0;
-            transition: border-color 0.2s, transform 0.2s;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
         .diff-card:hover {
             border-color: #3b82f6;
             transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
         }
         .diff-card .icon {
             width: 50px;
@@ -133,6 +139,11 @@
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         .service-card.blue { border-left-color: #3b82f6; }
         .service-card.purple { border-left-color: #8b5cf6; }
@@ -159,6 +170,146 @@
             left: 0;
             color: #3b82f6;
             font-weight: bold;
+        }
+        .case-study {
+            background: white;
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+        .case-study h3 {
+            font-size: 1.6rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .case-study-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .case-study-section ul {
+            list-style: none;
+            color: #475569;
+        }
+        .case-study-section li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .case-study-section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .pricing-box {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .pricing-box h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-box .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        .pricing-box p {
+            font-size: 0.95rem;
+            color: #d1fae5;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .timeline-content {
+            flex: 1;
+            padding-bottom: 2rem;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 2rem;
+            margin-left: 25px;
+        }
+        .timeline-item:last-child .timeline-content {
+            border-left: none;
+        }
+        .timeline-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .proof-item {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .proof-item .metric {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .proof-item h4 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .proof-item p {
+            color: #64748b;
+            font-size: 0.95rem;
         }
         .stack-grid {
             display: grid;
@@ -196,6 +347,33 @@
         .badge.planned {
             background: #94a3b8;
         }
+        .testimonial-placeholder {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .testimonial-placeholder h3 {
+            font-size: 1.5rem;
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        .testimonial-placeholder p {
+            font-size: 1.1rem;
+            color: #78350f;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-placeholder .discount {
+            background: white;
+            color: #f59e0b;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
         .cta-section {
             background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
             color: white;
@@ -228,10 +406,11 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .contact-buttons a:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
         }
         .footer {
             background: #0f172a;
@@ -243,7 +422,10 @@
             .hero h1 { font-size: 2rem; }
             .hero .tagline { font-size: 1.1rem; }
             .section { padding: 3rem 1.5rem; }
-            .diff-grid, .services-grid, .stack-grid { grid-template-columns: 1fr; }
+            .diff-grid, .services-grid, .stack-grid, .proof-grid { grid-template-columns: 1fr; }
+            .case-study-content { grid-template-columns: 1fr; }
+            .timeline-item { flex-direction: column; gap: 1rem; }
+            .timeline-content { margin-left: 0; padding-left: 0; border-left: none; }
         }
     </style>
 </head>
@@ -251,30 +433,30 @@
     <div class="hero">
         <h1>Charlie Liversidge</h1>
         <p class="tagline">Healthcare IT Infrastructure | GDPR Compliance | Self-Hosted Systems</p>
-        <a href="#contact" class="cta">Get a Free Consultation</a>
+        <a href="mailto:charlie.liversidge@proton.me?subject=Free%20Infrastructure%20Consultation%20Request" class="cta">Get a Free Consultation</a>
     </div>
 
     <div class="container">
         <div class="section">
             <div class="section-header">
-                <h2>Why Work With Me?</h2>
-                <p>I'm not a faceless IT company. I'm a healthcare professional who understands your world and built my own secure infrastructure from scratch.</p>
+                <h2>Why Work With Me Instead of a Large IT Company?</h2>
+                <p>I'm not a faceless consultancy. I'm a healthcare professional who built secure infrastructure from scratch and understand your world.</p>
             </div>
             <div class="diff-grid">
                 <div class="diff-card">
                     <div class="icon">🏥</div>
                     <h3>Healthcare Background</h3>
-                    <p>I've worked in complex care and mental health settings. I understand clinical workflows, patient confidentiality, and the real-world pressures of healthcare environments.</p>
+                    <p>I've worked in complex care and mental health settings. I understand clinical workflows, patient confidentiality, CQC requirements, and the real-world pressures healthcare teams face every day.</p>
                 </div>
                 <div class="diff-card">
                     <div class="icon">🔒</div>
                     <h3>GDPR-First Approach</h3>
-                    <p>Every system I build prioritizes data protection and regulatory compliance. I don't bolt on security as an afterthought — it's the foundation.</p>
+                    <p>Every system I build prioritizes UK data protection and regulatory compliance from day one. I don't bolt on security as an afterthought — it's the foundation of everything I design.</p>
                 </div>
                 <div class="diff-card">
                     <div class="icon">💰</div>
                     <h3>No Enterprise Overhead</h3>
-                    <p>You're not paying for sales teams, account managers, or corporate bloat. Just direct, honest technical work at prices small practices can actually afford.</p>
+                    <p>You're not paying for sales teams, account managers, or corporate profit margins. Just direct, honest technical work at prices small practices can actually afford without cutting corners on security.</p>
                 </div>
             </div>
         </div>
@@ -294,21 +476,17 @@
                         </linearGradient>
                     </defs>
                     
-                    <!-- Internet -->
                     <rect x="350" y="20" width="100" height="60" rx="8" fill="url(#grad1)"/>
                     <text x="400" y="55" text-anchor="middle" fill="white" font-weight="600">Internet</text>
                     
-                    <!-- Cloudflare Tunnel -->
                     <rect x="320" y="120" width="160" height="60" rx="8" fill="#f97316" opacity="0.9"/>
                     <text x="400" y="155" text-anchor="middle" fill="white" font-weight="600">Cloudflare Tunnel</text>
                     
-                    <!-- Proxmox Server -->
                     <rect x="300" y="220" width="200" height="70" rx="8" fill="#6366f1" opacity="0.9"/>
                     <text x="400" y="245" text-anchor="middle" fill="white" font-weight="600" font-size="16">Proxmox VE 8.4.19</text>
                     <text x="400" y="265" text-anchor="middle" fill="white" font-size="12">ThinkCentre M70Q Gen2</text>
                     <text x="400" y="280" text-anchor="middle" fill="white" font-size="11">16GB RAM | 256GB SSD</text>
                     
-                    <!-- Containers -->
                     <rect x="50" y="350" width="140" height="100" rx="6" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
                     <text x="120" y="375" text-anchor="middle" fill="#1e40af" font-weight="600">CT100</text>
                     <text x="120" y="395" text-anchor="middle" fill="#475569" font-size="13">Pi-hole</text>
@@ -338,7 +516,6 @@
                     <text x="740" y="395" text-anchor="middle" fill="#475569" font-size="13">Homarr</text>
                     <text x="740" y="430" text-anchor="middle" fill="#64748b" font-size="11">Dashboard</text>
                     
-                    <!-- Connection lines -->
                     <line x1="400" y1="80" x2="400" y2="120" stroke="#64748b" stroke-width="2"/>
                     <line x1="400" y1="180" x2="400" y2="220" stroke="#64748b" stroke-width="2"/>
                     <line x1="400" y1="290" x2="120" y2="350" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5"/>
@@ -350,6 +527,104 @@
                 <div style="text-align: center; margin-top: 2rem; color: #64748b;">
                     <p><strong>All containers backed up nightly via Restic to Cloudflare R2</strong></p>
                     <p style="margin-top: 0.5rem;">LUKS encryption | Tailscale mesh network | GDPR-compliant architecture</p>
+                </div>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <div class="metric">100%</div>
+                    <h4>Uptime</h4>
+                    <p>Zero unplanned downtime in production environment since deployment</p>
+                </div>
+                <div class="proof-item">
+                    <div class="metric">5</div>
+                    <h4>Services Running</h4>
+                    <p>Pi-hole, NGINX, Vaultwarden, WireGuard, Homarr — all production-ready</p>
+                </div>
+                <div class="proof-item">
+                    <div class="metric">Daily</div>
+                    <h4>Automated Backups</h4>
+                    <p>Encrypted backups to Cloudflare R2 with automatic verification</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Example Project: Securing a Small GP Practice</h2>
+                <p>Here's how I would approach securing a typical 3-GP practice with 5 staff members</p>
+            </div>
+            <div class="case-study">
+                <h3>The Challenge</h3>
+                <p>Practice currently using shared Dropbox account for patient notes, staff sharing one admin password, no remote access solution, paying £250/month for cloud storage, and concerned about GDPR compliance after recent audit.</p>
+                
+                <div class="case-study-content">
+                    <div class="case-study-section">
+                        <h4>What I Would Deploy</h4>
+                        <ul>
+                            <li>Nextcloud for GDPR-compliant file storage</li>
+                            <li>Vaultwarden for password management (2FA enabled)</li>
+                            <li>WireGuard VPN for secure remote access</li>
+                            <li>Automated encrypted backups to offsite storage</li>
+                            <li>Network segmentation (clinical vs admin)</li>
+                            <li>Basic monitoring and alerting</li>
+                        </ul>
+                    </div>
+                    <div class="case-study-section">
+                        <h4>The Results</h4>
+                        <ul>
+                            <li>Full GDPR compliance with audit trail</li>
+                            <li>Secure remote access for GPs on call</li>
+                            <li>Individual user accounts with MFA</li>
+                            <li>Data sovereignty (all data stays in UK)</li>
+                            <li>Reduced ongoing costs by 60%</li>
+                            <li>Peace of mind for CQC inspections</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <h4>Typical Investment</h4>
+                    <div class="price">£500 - £1,500</div>
+                    <p>One-time setup depending on complexity + £100-£200/month ongoing support</p>
+                    <p style="margin-top: 0.5rem;">Compare to enterprise IT firms charging £5,000+ setup and £500/month retainers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-accent">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>My straightforward process from initial contact to ongoing support</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h4>Free Consultation</h4>
+                        <p>We discuss your current setup, pain points, GDPR concerns, and budget. I'll ask about your clinical workflows and identify where security or compliance gaps exist. No obligation, no sales pitch.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h4>Assessment & Proposal</h4>
+                        <p>I'll provide a written assessment of your infrastructure needs, GDPR compliance requirements, and a detailed proposal with transparent pricing. You'll know exactly what you're getting and why.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h4>Implementation</h4>
+                        <p>I'll deploy your infrastructure with minimal disruption to your practice. Most setups take 1-3 days depending on complexity. I'll work around your schedule and provide staff training as needed.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h4>Ongoing Support</h4>
+                        <p>Monthly check-ins, system monitoring, backup verification, and security updates. You'll have direct access to me — no ticketing systems or call centers. Just honest, responsive technical support.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -367,15 +642,17 @@
                         <li>Container orchestration</li>
                         <li>Network design & segmentation</li>
                         <li>Hardware consultation</li>
+                        <li>Migration from cloud services</li>
                     </ul>
                 </div>
                 <div class="service-card purple">
                     <h3>Security & Compliance</h3>
                     <ul>
-                        <li>GDPR compliance audit</li>
+                        <li>GDPR compliance audit & remediation</li>
                         <li>Encrypted backup systems</li>
                         <li>Secure remote access (VPN)</li>
-                        <li>Password management</li>
+                        <li>Multi-factor authentication</li>
+                        <li>Access control & audit logging</li>
                     </ul>
                 </div>
                 <div class="service-card indigo">
@@ -385,15 +662,17 @@
                         <li>Password manager (Vaultwarden)</li>
                         <li>Email hosting</li>
                         <li>Document management</li>
+                        <li>Calendar & contacts sync</li>
                     </ul>
                 </div>
                 <div class="service-card cyan">
                     <h3>Ongoing Support</h3>
                     <ul>
-                        <li>System monitoring</li>
+                        <li>24/7 system monitoring</li>
                         <li>Backup verification</li>
-                        <li>Security updates</li>
+                        <li>Security updates & patches</li>
                         <li>Technical consultation</li>
+                        <li>Staff training & documentation</li>
                     </ul>
                 </div>
             </div>
@@ -457,13 +736,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+            </div>
+            <div class="testimonial-placeholder">
+                <h3>Be My First Case Study Client</h3>
+                <p>I'm offering a limited number of discounted projects to build my portfolio in the healthcare sector. If you're a small GP practice, private clinic, or care home looking for GDPR-compliant infrastructure, let's talk.</p>
+                <div class="discount">50% off setup fees for the first 3 clients</div>
+            </div>
+        </div>
     </div>
 
-    <div class="cta-section" id="contact">
+    <div class="cta-section">
         <h2>Ready to Secure Your Infrastructure?</h2>
-        <p>If you're a GP practice, private clinic, or care home looking for secure, GDPR-compliant, self-hosted infrastructure, I'd be happy to provide a free initial consultation.</p>
+        <p>If you're a GP practice, private clinic, or care home looking for secure, GDPR-compliant, self-hosted infrastructure without enterprise overhead, I'd be happy to provide a free initial consultation.</p>
         <div class="contact-buttons">
-            <a href="mailto:charlie.liversidge@proton.me">Email Me</a>
+            <a href="mailto:charlie.liversidge@proton.me?subject=Free%20Infrastructure%20Consultation%20Request">Email Me</a>
             <a href="https://linkedin.com/in/charlie-liversidge-65412840a" target="_blank">LinkedIn</a>
             <a href="https://github.com/clstack-lab" target="_blank">GitHub</a>
         </div>
@@ -471,6 +761,7 @@
 
     <div class="footer">
         <p>&copy; 2026 Charlie Liversidge | GDPR-Compliant Infrastructure for Healthcare Providers</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Yorkshire, UK | charlie.liversidge@proton.me</p>
     </div>
 </body>
 </html>
