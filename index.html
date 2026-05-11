@@ -3,106 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie Liversidge | Healthcare IT Infrastructure</title>
+    <title>Charlie Liversidge | Healthcare IT Infrastructure & GDPR Compliance</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #1e293b;
-            background: #f8fafc;
-            padding: 2rem 1rem;
+            background: #0f172a;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-bottom: 3px solid #3b82f6;
+        }
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+        .header .tagline {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            font-weight: 400;
         }
         .container {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 0;
         }
-        h1 {
-            font-size: 2rem;
+        .section {
+            padding: 3rem 2.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
             color: #0f172a;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #3b82f6;
+            display: inline-block;
         }
-        .tagline {
+        .intro {
             font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-        }
-        h2 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin: 2rem 0 1rem;
-            color: #0f172a;
-        }
-        p { margin-bottom: 1rem; color: #475569; }
-        ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        ul li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+            line-height: 1.8;
             color: #475569;
         }
-        ul li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
+        .intro p {
+            margin-bottom: 1.25rem;
         }
-        .contact {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-        a:hover { text-decoration: underline; }
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .service-card {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-left: 3px solid #3b82f6;
+            border-radius: 4px;
+        }
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .tech-stack {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid #6366f1;
+            margin-top: 1.5rem;
+        }
+        .tech-stack p {
+            color: #475569;
+            line-height: 1.7;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        .cta-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .cta-box p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #dbeafe;
+        }
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .contact-info a:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 640px) {
+            .header h1 { font-size: 2rem; }
+            .header .tagline { font-size: 1.1rem; }
+            .section { padding: 2rem 1.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Charlie Liversidge</h1>
+            <p class="tagline">Healthcare IT Infrastructure | GDPR Compliance | Self-Hosted Systems</p>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>Charlie Liversidge</h1>
-        <p class="tagline">Healthcare IT Infrastructure | GDPR Compliance | Self-Hosted Systems</p>
-        
-        <p>I'm a healthcare professional with hands-on experience in complex care and mental health settings, currently building technical expertise in secure, GDPR-compliant IT infrastructure specifically designed for small healthcare providers.</p>
-        
-        <p>I understand both the clinical workflows and the regulatory requirements that make healthcare IT unique. My approach combines privacy-first architecture with practical, affordable solutions that don't require enterprise budgets.</p>
-        
-        <h2>Services</h2>
-        <ul>
-            <li>Secure encrypted backups and disaster recovery</li>
-            <li>Self-hosted file storage (GDPR-compliant alternatives to Dropbox and Google Drive)</li>
-            <li>Remote access via VPN (no exposed RDP)</li>
-            <li>Password management and access control</li>
-            <li>Network security and segmentation</li>
-            <li>GDPR compliance consultation for small practices</li>
-        </ul>
-        
-        <h2>Technical stack</h2>
-        <p>Proxmox virtualization, LXC and Docker containers, Linux system administration, network security (VLANs, VPN, firewall configuration), encrypted storage, automated backup systems, and full-stack monitoring.</p>
-        
-        <div class="contact">
-            <h2>Get in touch</h2>
-            <p>If you're a GP practice, private clinic, or care home looking for secure, compliant, self-hosted infrastructure, I'd be happy to discuss your needs.</p>
-            <p><strong>Email:</strong> <a href="mailto:charlie.liversidge@proton.me">charlie.liversidge@proton.me</a></p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/charlie-liversidge-65412840a" target="_blank">LinkedIn</a>
-                <a href="https://github.com/clstack-lab" target="_blank">GitHub</a>
+        <div class="section intro">
+            <p>I'm a healthcare professional with hands-on experience in complex care and mental health settings, currently specializing in secure, GDPR-compliant IT infrastructure designed specifically for small healthcare providers.</p>
+            <p>I understand both the clinical workflows and the regulatory requirements that make healthcare IT unique. My approach combines privacy-first architecture with practical, affordable solutions that don't require enterprise budgets.</p>
+        </div>
+
+        <div class="section">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Secure Infrastructure</h3>
+                    <p>Encrypted backups, disaster recovery planning, and self-hosted storage solutions that keep your data under your control.</p>
+                </div>
+                <div class="service-card">
+                    <h3>GDPR Compliance</h3>
+                    <p>Practical compliance consultation for small practices, focusing on data protection, access controls, and audit trails.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Network Security</h3>
+                    <p>Secure remote access via VPN, network segmentation, firewall configuration, and password management systems.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Self-Hosted Solutions</h3>
+                    <p>GDPR-compliant alternatives to Dropbox, Google Drive, and other cloud services with full data sovereignty.</p>
+                </div>
             </div>
         </div>
+
+        <div class="section">
+            <h2>Technical Capabilities</h2>
+            <div class="tech-stack">
+                <p><strong>Infrastructure:</strong> Proxmox virtualization, LXC and Docker containerization, Linux system administration</p>
+                <p><strong>Security:</strong> Network segmentation (VLANs), VPN deployment (WireGuard), encrypted storage, secure backup systems</p>
+                <p><strong>Compliance:</strong> GDPR-compliant architecture, access control systems, audit logging, data protection frameworks</p>
+                <p><strong>Monitoring:</strong> Automated backup verification, system health monitoring, uptime tracking</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Get in Touch</h2>
+            <div class="cta-box">
+                <h3>Ready to discuss your infrastructure needs?</h3>
+                <p>If you're a GP practice, private clinic, or care home looking for secure, compliant, self-hosted infrastructure, I'd be happy to provide a free initial consultation.</p>
+                <div class="contact-info">
+                    <a href="mailto:charlie.liversidge@proton.me">Email Me</a>
+                    <a href="https://linkedin.com/in/charlie-liversidge-65412840a" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/clstack-lab" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Charlie Liversidge. GDPR-compliant infrastructure for healthcare providers.</p>
     </div>
 </body>
 </html>
